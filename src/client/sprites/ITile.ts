@@ -1,0 +1,50 @@
+export type TileTypes =
+    'ground'
+    | 'brick'
+    | 'coin'
+    ;
+export type TileNames
+    = 'ground'
+    | 'sky'
+    | 'chockolate'
+    | 'bricks'
+    | 'chance'
+    | 'chance-1'
+    | 'chance-2'
+    | 'chance-3'
+    | 'pipe-top-l'
+    | 'pipe-top-r'
+    | 'pipe-bot-l'
+    | 'pipe-bot-r'
+    | 'cloud-1-1'
+    | 'cloud-1-2'
+    | 'cloud-1-3'
+    | 'cloud-2-1'
+    | 'cloud-2-2'
+    | 'cloud-2-3'
+    | 'canon-1'
+    | 'canon-2'
+    | 'canon-3'
+    | 'level2-1'
+    | 'coin'
+    | 'coin-1'
+    | 'coin-2'
+    | 'coin-3'
+    | 'green-hill1-1'
+    | 'green-hill1-2'
+    | 'green-hill1-3'
+    | 'green-hill2-1'
+    | 'green-hill2-2'
+    | 'green-hill2-3'
+    | 'green-bush1-1'
+    | 'green-bush1-2'
+    | 'green-bush1-3'
+    | 'green-bush2-1'
+    | 'green-bush2-2'
+    | 'green-bush2-3'
+    ;
+
+export interface ITile {
+    name: TileNames;
+    index: [number, number]
+}
