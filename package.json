@@ -80,7 +80,6 @@
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.9.5",
-    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.11.0",
     "webpack-hot-middleware": "^2.25.0",
@@ -101,6 +100,7 @@
     "redux": "^4.0.4",
     "redux-observable": "^1.2.0",
     "redux-thunk": "^2.3.0",
-    "rxjs": "^6.6.3"
+    "rxjs": "^6.6.3",
+    "webpack": "^4.44.2"
   }
 }
