@@ -1,11 +1,13 @@
 import { AudioBoard } from '../AudioBoard';
 import { mario } from './mario';
 import { cannon } from './cannon';
+import { koopa } from './koopa';
 
 
 type SoundBoards =
     'mario'
     | 'cannon'
+    | 'koopa'
     ;
 
 export async function loadAudioBoard(name: SoundBoards, audioContext: AudioContext) {
@@ -15,6 +17,8 @@ export async function loadAudioBoard(name: SoundBoards, audioContext: AudioConte
                 return mario;
             case 'cannon':
                 return cannon;
+            case 'koopa':
+                return koopa;
         }
     };
     const loadAudio = createAudioLoader(audioContext);

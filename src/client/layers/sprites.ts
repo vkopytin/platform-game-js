@@ -16,8 +16,8 @@ export function createSpriteLayer(entities: Set<Entity>, width = 64, height = 64
             context.globalAlpha = 1;
             context.drawImage(
                 spriteBuffer,
-                Math.floor(entity.pos.x - camera.pos.x),
-                Math.floor(entity.pos.y - camera.pos.y)
+                (entity.pos.x - camera.pos.x),
+                (entity.pos.y - camera.pos.y)
             );
         });
     };

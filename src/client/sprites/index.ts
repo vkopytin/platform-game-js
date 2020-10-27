@@ -6,6 +6,7 @@ export * from './goomba';
 export * from './koopa';
 export * from './bullet';
 export * from './coin';
+export * from './brick';
 export type AvaialbleSpriteSheets
     = 'overworld'
     | 'underworld'
@@ -14,4 +15,5 @@ export type AvaialbleSpriteSheets
     | 'koopa'
     | 'bullet'
     | 'coin'
+    | 'brick'
     ;

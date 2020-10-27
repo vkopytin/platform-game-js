@@ -157,15 +157,25 @@ const level1_1: ILevel = {
         }]
     }, {
         tiles: [{
-            name: 'chance',
-            type: 'ground',
-            ranges: [[16, 9], [21, 9], [22, 5], [23, 9]]
+            name: 'bricks',
+            type: 'brick',
+            ranges: [
+                [20, 9], [22, 9], [24, 9],
+                [77, 9], [79, 9], [80, 8, 5, 1], [91, 3, 5, 1],
+                [94, 9], [100, 9], [+101, 9],
+                [118, 9], [121, 3, 5, 1],
+                [128, 5], [129, 2, 9, 1], [131, 5],
+                [168, 2, 9, 1], [171, 9]
+            ]
         }]
     }, {
         tiles: [{
-            name: 'bricks',
-            type: 'brick',
-            ranges: [[20, 9], [22, 9], [24, 9]]
+            name: 'chance',
+            type: 'chance',
+            ranges: [
+                [16, 9], [+21, 9], [22, 5], [23, 9], [+64, 8], [78, 9], [94, 5],
+                [106, 9], [109, 5], [109, 9], [112, 9], [129, 2, 5, 1], [170, 9]
+            ]
         }]
     }, {
         tiles: [{
@@ -174,9 +184,84 @@ const level1_1: ILevel = {
         }, {
             pattern: 'pipe-3h',
             ranges: [[38, 10]]
+        }, {
+            pattern: 'pipe-4h',
+            ranges: [[46, 9]]
+        }, {
+            pattern: 'pipe-4h',
+            ranges: [[57, 9]]
+        }, {
+            pattern: 'pipe-2h',
+            ranges: [[163, 11]]
+        }, {
+            pattern: 'pipe-2h',
+            ranges: [[179, 11]]
+        }]
+    }, {
+        tiles: [{
+            name: 'chockolate',
+            type: 'ground',
+            ranges: [
+                [134, 12], [135, 1, 11, 2], [136, 1, 10, 3], [137, 1, 9, 4],
+                [140, 1, 9, 4], [141, 1, 10, 3], [142, 1, 11, 2], [143, 12],
+                [148, 12], [149, 1, 11, 2], [150, 1, 10, 3], [151, 1, 9, 4], [152, 1, 9, 4],
+                [155, 1, 9, 4], [156, 1, 10, 3], [157, 1, 11, 2], [158, 12],
+                [181, 12], [182, 1, 11, 2], [183, 1, 10, 3], [184, 1, 9, 4], [185, 1, 8, 5], [186, 1, 7, 6], [187, 1, 6, 7], [188, 1, 5, 8], [189, 1, 5, 8]
+            ]
         }]
     }],
-    entities: [],
+    entities: false ? [] : [{
+        name: 'goomba-cannon',
+        pos: [22 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [40 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [51 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [53 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [80 * 16, 4 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [82 * 16, 4 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [97 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [99 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [114 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [116 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [124 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [126 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [128 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [130 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [174 * 16, 12 * 16]
+    }, {
+        name: 'goomba-cannon',
+        pos: [176 * 16, 12 * 16]
+    }, {
+        name: 'koopa',
+        pos: [107 * 16, 12 * 16]
+    }],
     triggers: [{
         type: 'goto',
         name: 'level1_2',

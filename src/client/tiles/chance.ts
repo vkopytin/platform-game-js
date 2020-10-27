@@ -37,29 +37,17 @@ function handleY<T>({ entity, match, resolver, gameContext, level }: {
     } else if (entity.vel.y < 0) {
         if (entity.trait(Player)) {
             const grid = resolver.matrix;
-            grid.delete(match.indexX, match.indexY);
-
-            entity.trait(Player).queue(entity => entity.sounds.add('marioBreakBlock'));
-
-            const brick1 = gameContext.entityFactory.brick();
-            brick1.vel.set(50, -400);
-            brick1.pos.set(match.x1, match.y1);
-            level.entities.add(brick1);
-
-            const brick2 = gameContext.entityFactory.brick();
-            brick2.vel.set(100, -500);
-            brick2.pos.set(match.x1, match.y1);
-            level.entities.add(brick2);
-
-            const brick3 = gameContext.entityFactory.brick();
-            brick3.vel.set(-50, -400);
-            brick3.pos.set(match.x1, match.y1);
-            level.entities.add(brick3);
-
-            const brick4 = gameContext.entityFactory.brick();
-            brick4.vel.set(-100, -500);
-            brick4.pos.set(match.x1, match.y1);
-            level.entities.add(brick4);
+            grid.replace(match.indexX, match.indexY, {
+                ...grid.get(match.indexX, match.indexY),
+                name: 'chance-ground',
+                type: 'ground'
+            });
+            entity.trait(Player).addCoins(1);
+            const coin = gameContext.entityFactory.coin();
+            coin.vel.set(50, -400);
+            coin.pos.set(match.x1, match.y1);
+            level.entities.add(coin);
+            entity.trait(Player).queue(entity => entity.sounds.add('marioCoin'));
         }
         if (entity.bounds.top < match.y2) {
             entity.obstruct('top', match);
@@ -67,4 +55,4 @@ function handleY<T>({ entity, match, resolver, gameContext, level }: {
     }
 }
 
-export const brick = [handleX, handleY];
+export const chance = [handleX, handleY];

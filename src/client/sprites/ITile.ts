@@ -2,6 +2,7 @@ export type TileTypes =
     'ground'
     | 'brick'
     | 'coin'
+    | 'chance'
     ;
 export type TileNames
     = 'ground'
@@ -12,6 +13,7 @@ export type TileNames
     | 'chance-1'
     | 'chance-2'
     | 'chance-3'
+    | 'chance-ground'
     | 'pipe-top-l'
     | 'pipe-top-r'
     | 'pipe-bot-l'

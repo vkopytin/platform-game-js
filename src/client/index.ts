@@ -92,5 +92,5 @@ const audioContext = new AudioContext();
     }
 
     timer.start();
-    runLevel('debug1_1');
+    runLevel('level1_1');
 })();

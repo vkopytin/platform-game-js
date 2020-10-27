@@ -13,8 +13,8 @@ export function createCameraOverlayLayer(cameraToDraw: Camera) {
             fromCamera.pos.y + 0 * 16,
             fromCamera.size.x,
             fromCamera.size.y,
-            Math.floor(cameraToDraw.pos.x - fromCamera.pos.x),
-            Math.floor(cameraToDraw.pos.y - fromCamera.pos.y),
+            (cameraToDraw.pos.x - fromCamera.pos.x),
+            (cameraToDraw.pos.y - fromCamera.pos.y),
             cameraToDraw.size.x, cameraToDraw.size.y
         );
     };

@@ -4,6 +4,8 @@ import { loadKoopa } from './koopa';
 import { loadBullet } from './bullet';
 import { loadCannon } from './cannon';
 import { loadCoin } from './coin';
+import { loadBrick } from './brick';
+import { loadGoombaCannon } from './goomba-cannon';
 
 
 export async function loadEntities(audioContext: AudioContext) {
@@ -13,6 +15,8 @@ export async function loadEntities(audioContext: AudioContext) {
     const bulletDelay = loadBullet(audioContext);
     const cannonDelay = loadCannon(audioContext);
     const coin = loadCoin(audioContext);
+    const brick = loadBrick(audioContext);
+    const goombaCannon = loadGoombaCannon(audioContext);
 
     return {
         mario: await marioDelay,
@@ -20,6 +24,8 @@ export async function loadEntities(audioContext: AudioContext) {
         koopa: await koopaDelay,
         bullet: await bulletDelay,
         cannon: await cannonDelay,
-        coin: await coin
+        coin: await coin,
+        brick: await brick,
+        'goomba-cannon': await goombaCannon
     };
 }

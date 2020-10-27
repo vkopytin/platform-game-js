@@ -25,6 +25,14 @@ export class Matrix<T> {
             delete col[y];
         }
     }
+
+    replace(x: number, y: number, block: T) {
+        const col = this.grid[x];
+        if (col) {
+            col[y] = block;
+        }
+    }
+
 }
 
 export class Vec2 {

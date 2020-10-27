@@ -5,7 +5,7 @@ import { TileResolver } from '../TileResolver';
 import { Player } from '../traits';
 
 
-export function handle<T>({ entity, match, resolver, gameContext, level }: {
+function handle<T>({ entity, match, resolver, gameContext, level }: {
     entity: Entity;
     match: any;
     resolver: TileResolver<T>;

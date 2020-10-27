@@ -19,6 +19,7 @@ export class PendulumMove extends Trait {
     obstruct(entity: Entity, side: 'bottom' | 'top' | 'left' | 'right') {
         if (side === 'left' || side === 'right') {
             this.speed = -this.speed;
+            entity.events.emit('pendulumBounce', entity);
         }
     }
 }

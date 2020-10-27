@@ -6,8 +6,8 @@ export function createCameraLayer(cameraToDraw: Camera) {
         context.strokeStyle = 'purple';
         context.beginPath();
         context.rect(
-            Math.floor(cameraToDraw.pos.x - fromCamera.pos.x),
-            Math.floor(cameraToDraw.pos.y - fromCamera.pos.y),
+            (cameraToDraw.pos.x - fromCamera.pos.x),
+            (cameraToDraw.pos.y - fromCamera.pos.y),
             cameraToDraw.size.x, cameraToDraw.size.y
         );
         context.stroke();

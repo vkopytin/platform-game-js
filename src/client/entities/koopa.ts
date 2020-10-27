@@ -1,9 +1,10 @@
 import { Entity } from '../Entity';
 import { GoTrait, Jump, Trait, Stomper, Killable, Solid, Physics } from '../traits';
-import { loadSpriteSheet } from '../loaders';
+import { loadAudioBoard, loadSpriteSheet } from '../loaders';
 import { SpriteSheet } from '../SpriteSheet';
 import { PendulumMove } from '../traits';
 import { IGameContext } from '../IGameContext';
+import { AudioBoard } from '../AudioBoard';
 
 
 const STATE_WALKING = 'waliking';
@@ -19,6 +20,11 @@ class Behavior extends Trait {
 
     constructor() {
         super('behavior');
+        this.listen('pendulumBounce', (entity: Entity) => {
+            if (this.state === STATE_PANIC) {
+                entity.sounds.add('bounce');
+            }
+        });
     }
     collides(us: Entity, them: Entity) {
         if (us.trait(Killable).dead) {
@@ -60,6 +66,7 @@ class Behavior extends Trait {
     }
 
     panic(us: Entity, them: Entity) {
+        us.sounds.add('koopaStomp');
         us.trait(PendulumMove).enabled = true;
         us.trait(PendulumMove).speed = this.panicSpeed * Math.sign(them.vel.x);
         this.state = STATE_PANIC;
@@ -94,10 +101,11 @@ class Behavior extends Trait {
 
 export async function loadKoopa(audioContext: AudioContext) {
     const sprite = await loadSpriteSheet('koopa');
-    return createKoopaFactory(sprite);
+    const audioBoard = await loadAudioBoard('koopa', audioContext);
+    return createKoopaFactory(sprite, audioBoard);
 }
 
-function createKoopaFactory(sprite: SpriteSheet) {
+function createKoopaFactory(sprite: SpriteSheet, audioBoard: AudioBoard) {
     const walkAnim = sprite.animations.get('walk');
     const wakeAnim = sprite.animations.get('wake');
     
@@ -120,6 +128,7 @@ function createKoopaFactory(sprite: SpriteSheet) {
 
     return function createKoopa() {
         const koopa = new Entity('koopa');
+        koopa.audio = audioBoard;
         koopa.size.set(16, 16);
         koopa.offset.y = 8;
 

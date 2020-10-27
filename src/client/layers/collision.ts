@@ -12,8 +12,8 @@ function createEntityLayer(entities: Set<Entity>) {
         entities.forEach((entity) => {
             context.beginPath();
             context.rect(
-                Math.floor(entity.bounds.left - camera.pos.x),
-                Math.floor(entity.bounds.top - camera.pos.y),
+                (entity.bounds.left - camera.pos.x),
+                (entity.bounds.top - camera.pos.y),
                 entity.size.x, entity.size.y
             );
             context.stroke();

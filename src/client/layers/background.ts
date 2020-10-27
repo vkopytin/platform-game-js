@@ -8,8 +8,8 @@ import { Camera } from '../Camera';
 export function createBackgroundLayer(level: Level, tiles: Matrix<IBackground>, sprites: SpriteSheet) {
     const resolver = new TileResolver(tiles);
     const buffer = document.createElement('canvas');
-    buffer.width = 256 + 16;
-    buffer.height = 240;
+    buffer.width = (256 + 16);
+    buffer.height = (240);
     const context = buffer.getContext('2d');
 
     function redraw(startIndex: number, endIndex: number) {
@@ -36,8 +36,8 @@ export function createBackgroundLayer(level: Level, tiles: Matrix<IBackground>, 
         context.globalAlpha = 1;
         context.drawImage(
             buffer,
-            -Math.floor(camera.pos.x % 16),
-            -Math.floor(camera.pos.y)
+            -(camera.pos.x % 16),
+            -(camera.pos.y)
         );
     };
 }

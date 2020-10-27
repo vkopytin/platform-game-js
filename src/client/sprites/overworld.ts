@@ -30,6 +30,9 @@ const overworld: ISpriteSheet = {
     }, {
         name: 'chance-3',
         index: [26, 0]
+    }, {
+        name: 'chance-ground',
+        index: [3, 0]
 
     }, {
         name: 'coin-1',
