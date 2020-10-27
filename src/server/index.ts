@@ -14,13 +14,13 @@ const credentials = { key: privateKey, cert: certificate };
 let httpsServer = null;
 const options = {
     NODE_ENV: process.env.NODE_ENV,
-    SPORT: process.env.SERVER_SPORT || 8080
+    PORT: process.env.PORT || 8080
 };
 
 try {
     httpsServer = https.createServer(credentials, app);
-    httpsServer.listen(options.SPORT, () => {
-        warn('The server is running in port localhost: ', options.SPORT);
+    httpsServer.listen(options.PORT, () => {
+        warn('The server is running in port localhost: ', options.PORT);
     });
 } catch (ex) {
     setTimeout(() => { throw ex; });
