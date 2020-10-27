@@ -23,7 +23,7 @@ try {
         warn('The server is running in port localhost: ', options.PORT);
     });
 } catch (ex) {
-    setTimeout(() => { throw ex; });
+    setTimeout(() => { console.log(ex); });
 }
 
 declare var module: {
