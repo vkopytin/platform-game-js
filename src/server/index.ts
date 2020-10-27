@@ -1,5 +1,5 @@
 import fs = require('fs');
-import https = require('https');
+import http = require('http');
 import { app } from './main';
 
 
@@ -18,7 +18,7 @@ const options = {
 };
 
 try {
-    httpsServer = https.createServer(credentials, app);
+    httpsServer = http.createServer(app);
     httpsServer.listen(options.PORT, () => {
         warn('The server is running in port localhost: ', options.PORT);
     });
