@@ -33,7 +33,7 @@ function createRollMotion(router: InputRouter) {
     }
 }
 
-export function setupKeyboard(window) {
+export function setupKeyboard(window: Window) {
     const SPACE = 'Space';
     const RIGHT = 'ArrowRight';
     const LEFT = 'ArrowLeft';

@@ -7,7 +7,7 @@ import { Player } from '../traits';
 
 function handleX<T>({ entity, match }: {
     entity: Entity;
-    match;
+    match: any;
     resolver: TileResolver<T>;
     gameContext: IGameContext;
     level: Level;
@@ -25,7 +25,7 @@ function handleX<T>({ entity, match }: {
 
 function handleY<T>({ entity, match, resolver, gameContext, level }: {
     entity: Entity;
-    match;
+    match: any;
     resolver: TileResolver<T>;
     gameContext: IGameContext;
     level: Level;

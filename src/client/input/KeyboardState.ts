@@ -9,7 +9,7 @@ export class KeyboardState {
         this.keyMap.set(code, cb);
     }
 
-    handleEvent(evnt) {
+    handleEvent(evnt: any) {
         const { code } = evnt;
         if (!this.keyMap.has(code)) {
             return;

@@ -72,7 +72,7 @@ function setupTriggers(levelSpec: ILevel, level: Level) {
 });
 }
 
-export function createLevelLoader(entityFactory) {
+export function createLevelLoader(entityFactory: { [key: string]: () => Entity }) {
     return async function loadLevel(name: AvaialbelLevels) {
         const levelSpec = availableLevels[name];
         const level = new Level();

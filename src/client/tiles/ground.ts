@@ -6,7 +6,7 @@ import { TileResolver } from '../TileResolver';
 
 export function handleX<T>({ entity, match, resolver, gameContext, level }: {
     entity: Entity;
-    match;
+    match: any;
     resolver: TileResolver<T>;
     gameContext: IGameContext;
     level: Level;
@@ -24,7 +24,7 @@ export function handleX<T>({ entity, match, resolver, gameContext, level }: {
 
 export function handleY<T>({ entity, match, resolver, gameContext, level }: {
     entity: Entity;
-    match;
+    match: any;
     resolver: TileResolver<T>;
     gameContext: IGameContext;
     level: Level;

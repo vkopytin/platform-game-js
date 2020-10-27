@@ -12,7 +12,7 @@ export class Trigger extends Trait {
         super('trigger');
     }
 
-    collides(us, them) {
+    collides(us: Entity, them: Entity) {
         this.touches.add(them);
     }
 

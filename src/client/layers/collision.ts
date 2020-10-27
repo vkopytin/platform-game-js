@@ -22,7 +22,7 @@ function createEntityLayer(entities: Set<Entity>) {
 }
 
 function createTileCandidateLayer(tileResolver: TileResolver<IBackground>) {
-    const resolvedTiles = [] as Array<{ x; y; }>;
+    const resolvedTiles = [] as Array<{ x: number; y: number; }>;
     const tileSize = tileResolver.tileSize;
 
     const getByIndexOriginal = tileResolver.getByIndex;

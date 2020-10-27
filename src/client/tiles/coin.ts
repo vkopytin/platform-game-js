@@ -7,7 +7,7 @@ import { Player } from '../traits';
 
 export function handle<T>({ entity, match, resolver, gameContext, level }: {
     entity: Entity;
-    match;
+    match: any;
     resolver: TileResolver<T>;
     gameContext: IGameContext;
     level: Level;

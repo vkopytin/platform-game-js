@@ -9,7 +9,7 @@ export class Solid extends Trait {
         super('solid');
     }
 
-    obstruct(entity: Entity, side: 'bottom' | 'top' | 'left' | 'right', match) {
+    obstruct(entity: Entity, side: 'bottom' | 'top' | 'left' | 'right', match: any) {
         if (!this.obstructs) {
             return;
         }

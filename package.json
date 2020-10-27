@@ -9,8 +9,9 @@
     "build": "npm --version",
     "lint": "tslint -p tsconfig.json",
     "test": "jest",
-    "dev": "node webpack.devserver.config -d --history-api-fallback--hot --inline --progress --colors",
-    "start": "cross-env NODE_OPTIONS=--max_old_space_size=4000 NODE_ENV=development webpack --watch --progress --color --config webpack.backend.config",
+    "srv-dev": "node webpack.devserver.config -d --history-api-fallback--hot --inline --progress --colors",
+    "dev": "cross-env NODE_OPTIONS=--max_old_space_size=4000 NODE_ENV=development webpack --watch --progress --color --config webpack.backend.config",
+    "start": "node dist/server.js",
     "make-ssl-sert": "openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./selfsigned.key -out selfsigned.crt"
   },
   "keywords": [

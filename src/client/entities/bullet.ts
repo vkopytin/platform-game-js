@@ -1,5 +1,6 @@
 import { Entity } from '../Entity';
 import { IGameContext } from '../IGameContext';
+import { Level } from '../levels';
 import { loadSpriteSheet } from '../loaders';
 import { SpriteSheet } from '../SpriteSheet';
 import { Gravity, Killable, PendulumMove, Stomper, Trait, Velocity } from '../traits';
@@ -26,7 +27,7 @@ class Behavior extends Trait {
             }
         }
     }
-    update(entity: Entity, gameContext: IGameContext, level) {
+    update(entity: Entity, gameContext: IGameContext, level: Level) {
         const absX = Math.abs(entity.vel.x);
         if (this.currentDistance > this.maxDistance) {
             entity.trait(Killable).kill();

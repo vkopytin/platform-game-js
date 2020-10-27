@@ -1,3 +1,5 @@
+import { IGameContext } from './IGameContext';
+import { Level } from './levels';
 import { MusicPlayer } from './MusicPlayer';
 
 
@@ -8,7 +10,7 @@ export class MusicController {
         this.player = musicPlayer;
     }
 
-    update(level, gameContext) {
+    update(level: Level, gameContext: IGameContext) {
 
     }
 

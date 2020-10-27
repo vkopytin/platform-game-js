@@ -30,7 +30,7 @@ class Entity {
         this.traits.set(trait.constructor as any, trait);
     }
 
-    trait<T>(traitCtor: new (...args) => T): T {
+    trait<T>(traitCtor: new (...args: any[]) => T): T {
         return this.traits.get(traitCtor);
     }
 
@@ -40,7 +40,7 @@ class Entity {
         });
     }
 
-    obstruct(side: 'bottom' | 'top' | 'left' | 'right', match) {
+    obstruct(side: 'bottom' | 'top' | 'left' | 'right', match: any) {
         this.traits.forEach(trait => {
             trait.obstruct(this, side, match);
         });

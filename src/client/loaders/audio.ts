@@ -31,7 +31,7 @@ export async function loadAudioBoard(name: SoundBoards, audioContext: AudioConte
 }
 
 export function createAudioLoader(context: AudioContext) {
-    return async function loadAudio(url) {
+    return async function loadAudio(url: string) {
         const res = await fetch(url);
         const buffer = await res.arrayBuffer();
 

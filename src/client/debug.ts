@@ -3,7 +3,7 @@ import { Entity } from './Entity';
 
 
 export function setupMouseControl(canvas: HTMLCanvasElement, entity: Entity, camera: Camera) {
-    let lastEvent;
+    let lastEvent: any;
     ['mousedown', 'mousemove'].forEach(eventName => {
         canvas.addEventListener(eventName, (evnt: any) => {
             const { buttons, offsetX, offsetY } = evnt;

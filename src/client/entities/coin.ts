@@ -1,5 +1,6 @@
 import { Entity } from '../Entity';
 import { IGameContext } from '../IGameContext';
+import { Level } from '../levels';
 import { loadSpriteSheet } from '../loaders';
 import { SpriteSheet } from '../SpriteSheet';
 import { Gravity, Killable, PendulumMove, Stomper, Trait, Velocity } from '../traits';
@@ -13,7 +14,7 @@ class Behavior extends Trait {
     constructor() {
         super('behavior');
     }
-    update(entity: Entity, gameContext: IGameContext, level) {
+    update(entity: Entity, gameContext: IGameContext, level: Level) {
         this.idleTime += gameContext.deltaTime;
         if (this.idleTime > this.removeAfter) {
             this.queue(() => level.entities.delete(entity));

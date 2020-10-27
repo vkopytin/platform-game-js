@@ -13,6 +13,5 @@ export type AvaialbleSpriteSheets
     | 'goomba'
     | 'koopa'
     | 'bullet'
-    | 'cannon'
     | 'coin'
     ;

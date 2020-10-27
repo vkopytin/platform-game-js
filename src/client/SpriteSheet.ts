@@ -6,7 +6,7 @@ class SpriteSheet {
 
     }
 
-    defineAnim(name: string, animation) {
+    defineAnim(name: string, animation: (distance: number) => string) {
         this.animations.set(name, animation);
     }
 

@@ -1,4 +1,4 @@
-export function loadImage(url) {
+export function loadImage(url: string) {
     return new Promise<HTMLImageElement>((resolve) => {
         const onLoad = () => {
             img.removeEventListener('load', onLoad);

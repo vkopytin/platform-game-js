@@ -6,13 +6,13 @@ import { EventBuffer } from '../EventBuffer';
 
 
 export class Trait {
-    listeners = [] as Array<{ name: string, callback: (...args) => any, count: number }>;
+    listeners = [] as Array<{ name: string, callback: (...args: any[]) => any, count: number }>;
 
     constructor(public NAME: string) {
 
     }
 
-    listen(name: string, callback: (...args) => any, count = Infinity) {
+    listen(name: string, callback: (...args: any[]) => any, count = Infinity) {
         this.listeners.push({ name, callback, count });
     }
 
@@ -27,7 +27,7 @@ export class Trait {
         this.listen('task', task, 1);
     }
 
-    collides(us, them) {
+    collides(us: Entity, them: Entity) {
 
     }
 
@@ -35,7 +35,7 @@ export class Trait {
 
     }
 
-    obstruct(entity: Entity, side: 'bottom' | 'top' | 'left' | 'right', match) {
+    obstruct(entity: Entity, side: 'bottom' | 'top' | 'left' | 'right', match: any) {
 
     }
 }

@@ -1,12 +1,12 @@
 export class Matrix<T> {
     grid = [] as Array<Array<T>>;
-    set(x, y, value: T) {
+    set(x: number, y: number, value: T) {
         if (!this.grid[x]) {
             this.grid[x] = [];
         }
         this.grid[x][y] = value;
     }
-    get(x, y) {
+    get(x: number, y: number) {
         const col = this.grid[x];
         if (col) {
             return col[y];
@@ -19,7 +19,7 @@ export class Matrix<T> {
         });
     }
 
-    delete(x, y) {
+    delete(x: number, y: number) {
         const col = this.grid[x];
         if (col) {
             delete col[y];
@@ -34,7 +34,7 @@ export class Vec2 {
         this.set(x, y);
     }
 
-    set(x, y) {
+    set(x: number, y: number) {
         this.x = x;
         this.y = y;
     }

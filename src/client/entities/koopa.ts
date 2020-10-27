@@ -15,7 +15,7 @@ class Behavior extends Trait {
     hideTime = 0;
     hideDuration = 5;
     panicSpeed = 300;
-    walkSpeed = null;
+    walkSpeed = null as number;
 
     constructor() {
         super('behavior');
