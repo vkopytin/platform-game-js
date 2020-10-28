@@ -18,7 +18,7 @@ export async function loadCannon(audioContext: AudioContext) {
 function createCannonFactory(audioBoard: AudioBoard) {
 
     function emitBullet(cannon: Entity, gameContext: IGameContext, level: Level) {
-        let dir = 0;
+        let dir = 1;
         for (const player of findPlayers(level)) {
             const distance = Math.abs(player.pos.x - cannon.pos.x);
             if (!(distance >= HOLD_FIRE_THRESHOLD && distance <= KEEP_FIRE_DISTANCE)) {
@@ -40,6 +40,8 @@ function createCannonFactory(audioBoard: AudioBoard) {
         cannon.audio = audioBoard;
 
         const emitter = new Emitter();
+        emitter.holdFireThreshold = HOLD_FIRE_THRESHOLD;
+        emitter.keepFireDistance = KEEP_FIRE_DISTANCE;
         emitter.interval = 4;
         emitter.emitters.push(emitBullet);
         cannon.addTrait(emitter);

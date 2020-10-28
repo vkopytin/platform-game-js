@@ -8,8 +8,8 @@ import { Camera } from '../Camera';
 export function createBackgroundLayer(level: Level, tiles: Matrix<IBackground>, sprites: SpriteSheet) {
     const resolver = new TileResolver(tiles);
     const buffer = document.createElement('canvas');
-    buffer.width = (256 + 16);
-    buffer.height = (240);
+    buffer.width = 2 * 256 + 16;
+    buffer.height = 4 * 240;
     const context = buffer.getContext('2d');
 
     function redraw(startIndex: number, endIndex: number) {
